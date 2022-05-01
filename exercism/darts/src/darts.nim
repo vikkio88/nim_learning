@@ -2,7 +2,8 @@ import std/math
 
 type Coord = tuple[x,y:float]
 proc score*(coords:Coord): int =
-    let distance = sqrt((coords.x ^ 2) + (coords.y ^ 2))
+    let (x,y) = coords
+    let distance = sqrt((x ^ 2) + (y ^ 2))
     if distance > 10.0:
         result = 0
     elif distance <= 1.0:
