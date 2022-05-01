@@ -5,7 +5,7 @@ author        = "Vincenzo Ciaccio"
 description   = "Chat nimble package"
 license       = "MIT"
 srcDir        = "src"
-bin           = @["main"]
+bin           = @["client", "server"]
 binDir        = "build"
 
 

@@ -1,4 +1,4 @@
-import os
+import os, threadpool
 
 echo "Chat app started..."
 
@@ -11,10 +11,12 @@ echo "Connecting to " & serverAddr & "..."
 const EXIT_CMD = ">q"
 echo "---------"
 echo "'>q' to exit"
-var message = ""
-while message != EXIT_CMD:
-    if message != "":
-        echo "Sending message " & message
-    message = stdin.readLine()
+var message = spawn stdin.readLine()
+while ^message != EXIT_CMD:
+    if ^message != "":
+        echo "Sending message " & ^message
+    echo "stuff1"
+    message = spawn stdin.readLine()
+    echo "stuff2"
 
 echo "\n\n...quit received, kthx-bye uwu\n\n"
